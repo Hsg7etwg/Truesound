@@ -1,0 +1,57 @@
+<?php
+//Configuration
+$upload_dir='uploads/';
+$allowed_extensions=array('mp3','mp4','jpg','png');
+
+//Check if the form has been submitted
+if($_SERVER['REQUEST_METHOD']==
+'POST'){
+ //Get the file information
+ $file_name=$_FILES['file']['name'];
+ $file_tmp_name=$_FILES['file']
+['tmp_name'];
+ $file_size=$_FILES['file']['size'];
+ $file_error=$_FILES['file']['error'];
+
+//Get the extension 
+$file_extension=explode('.;$file_name);
+$file_extension=
+strtolower(end($file_extension));
+
+//Check if the file extension is allowed
+if(in_array($file_extension,
+$allowed_extensions)){
+ //Check if the file size is within the
+allowed limit
+ if($file_size<=1024*1024*10) {
+   //Upload the file
+   $new_file_name=
+uniqid() .'.'.
+$file_extension;
+   $upload_file_path=
+$upload_dir . $new_file_name;
+
+move_uploaded_file($file_tmp_name, $upload_file_path);
+
+   //Display a success
+message
+   echo 'File uploaded
+successfully!';
+  }else{
+   echo "File size exceeds
+the allowed limit!';
+  }
+ }else{
+   echo "File extension is not
+allowed!';
+ }
+}
+?>
+
+<!-- HTML Form -->
+<form action="" method="post"
+enctype="multipart/form-data">
+  <input type="file"
+name="file">
+  <button type="submit">Upload</button>
+</form>

@@ -1,0 +1,53 @@
+<section class="terms-of-use">
+ <h2>Terms of Use</h2>
+ <p>Last Updated: [insert data]</p>
+ <p>Please read these Terms of Use carefully before using your website.</p>
+ <ul> 
+   <li><a href="#definitions">Definitions</a></li> 
+   <li><a href="#use-of-website">Use of Website</a></li>
+   <li><a href="#intellectual-property">Intellectual Property</a></li>
+   <li><a href="#disclaimer">Disclaimer</a></li>
+   <li><a href="#limitation-of-liability">Limitation-of-Liability</a></li>
+   <li><a href="#governing-law">Governing-Law</a></li>
+ </ul>
+</section>
+
+<style>
+.terms-of-use{
+ background-color:#f7f7f7;
+ padding:2em;
+}
+.terms-of-use h2{
+ margin-top:0;
+}
+.terms-of-use ul{
+ list-style:none; 
+ margin:0;
+ padding:0;
+}
+.terms-of-use a{
+ text-decoration:none;
+ color:#337ab7;
+}
+.terms-of-use a:hover{
+ color:#23527c;
+}
+</style>
+
+<script>
+//Smooth scrolling to anchor
+links
+document.querySelectorAll('.terms-of-use
+a[href^="#"]').forEach((anchor)
+=>{
+
+anchor.addEventListener('click',
+(e)=>{
+  e.preventDefault();
+
+document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+  behaviour:'smooth'
+  });
+ });
+});
+</script>
